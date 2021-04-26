@@ -1,0 +1,6 @@
+<h2>{{hero.name | uppercase}} Details</h2> <!-- | this is called piping--> 
+<div><span>id: </span>{{hero.id}}</div>
+<div>
+    <label for="name">Hero name:</label>
+    <input type="name" [(ngModel)]="hero.name" placeholder="name"> <!--Two way binding with [(ngModel)] which allows data to flow in both directions from name property to textbox and from textbox to name property-->
+</div>
