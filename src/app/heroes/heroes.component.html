@@ -2,10 +2,11 @@
 
 <h2>My Heroes</h2>
 <ul class="heroes">
-    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero"> <!--*ngFor is Angular's repeater directive, click is an example of event binding-->
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <li *ngFor="let hero of heroes"> <!--*ngFor is Angular's repeater directive, click is an example of event binding-->
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </a>
     </li>
 </ul>
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
 
 
