@@ -1,11 +1,19 @@
 <!--Two way binding with [(ngModel)] which allows data to flow in both directions from name property to textbox and from textbox to name property-->
 
 <h2>My Heroes</h2>
+<div>
+    <label id="new-hero">Hero Name: </label>
+    <input type="text" for="new-hero" #heroName>
+
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="add-button" (click)="add(heroName.value); heroName.value=''">Add Hero</button>
+</div>
 <ul class="heroes">
     <li *ngFor="let hero of heroes"> <!--*ngFor is Angular's repeater directive, click is an example of event binding-->
         <a routerLink="/detail/{{hero.id}}">
             <span class="badge">{{hero.id}}</span> {{hero.name}}
         </a>
+        <button class="delete" title="delete hero" (click)="delete(hero)">X</button>
     </li>
 </ul>
 
